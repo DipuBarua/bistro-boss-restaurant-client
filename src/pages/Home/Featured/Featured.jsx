@@ -4,13 +4,13 @@ import moment from "moment/moment";
 import "./Featured.css"
 const Featured = () => {
     return (
-        <div className="featured-item text-white pt-8 mb-16">
+        <section className="featured-item text-white pt-8 mb-16 bg-fixed">
             <SectionTitle
                 subHeading={'---Check it out---'}
                 heading={'FROM OUR MENU'}
             ></SectionTitle>
 
-            <div className=" md:flex items-center justify-center px-40 py-24">
+            <div className=" bg-slate-500 bg-opacity-30 md:flex items-center justify-center px-40 py-24">
                 <div>
                     <img src={fraturedImg} alt="" />
                 </div>
@@ -20,11 +20,11 @@ const Featured = () => {
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Error voluptate facere, deserunt dolores maiores quod nobis quas quasi. Eaque repellat recusandae ad laudantium tempore consequatur consequuntur omnis ullam maxime tenetur.
                     </p>
-                    <button className=" btn btn-outline uppercase">Read more</button>
+                    <button className=" btn btn-outline border-0 border-b-4 uppercase">Read more</button>
                 </div>
             </div>
 
-        </div>
+        </section>
     );
 };
 
