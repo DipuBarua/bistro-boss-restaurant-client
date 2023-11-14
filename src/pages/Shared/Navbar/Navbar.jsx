@@ -6,14 +6,14 @@ const Navbar = () => {
 
     const dropDownMenu = <>
         <summary>Parent</summary>
-        <ul className="p-2">
+        <ul className="p-2 bg-black bg-opacity-30 text-white">
             <li><a>Submenu 1</a></li>
             <li><a>Submenu 2</a></li>
         </ul>
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar max-w-screen-xl fixed z-10 bg-black bg-opacity-30 text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
