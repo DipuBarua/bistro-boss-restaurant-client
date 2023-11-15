@@ -6,5 +6,10 @@
 
 # Libraries:
 - daisy UI
-- moment.js
+- Date & Time: moment.js
 - swiper
+ 
+# Exist components:
+- parallax  
+- Website Naming: react-helmet-async
+- 
