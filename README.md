@@ -6,10 +6,10 @@
 
 # Libraries:
 - daisy UI
-- Date & Time: moment.js
 - swiper
  
-# Exist components:
-- parallax  
+# Others Exist Components:
+- Date & Time: moment.js
+- react parallax (blur,scroll)  
 - Website Naming: react-helmet-async
-- 
+- react tabs

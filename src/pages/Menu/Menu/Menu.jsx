@@ -49,7 +49,7 @@ const Menu = () => {
             <MenuCategory
                 items={dessert}
                 img={dessertImg}
-                title={"Dessert"}
+                title={"dessert"}
                 description={"It's dessert"}
             ></MenuCategory>
 
