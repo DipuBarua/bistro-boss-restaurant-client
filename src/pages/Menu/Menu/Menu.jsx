@@ -16,9 +16,7 @@ const Menu = () => {
     const dessert = menu.filter(item => item.category === 'dessert');
     const pizza = menu.filter(item => item.category === 'pizza');
     const salad = menu.filter(item => item.category === 'salad');
-    const drinks = menu.filter(item => item.category === 'drinks');
     const soup = menu.filter(item => item.category === 'soup');
-    const popular = menu.filter(item => item.category === 'popular');
     const offered = menu.filter(item => item.category === 'offered');
 
     return (

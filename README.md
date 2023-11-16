@@ -1,6 +1,9 @@
 # Project: Bistro Boss Restaurant
 - Live: 
 
+# Featured or Functionality:
+- 
+
 # Css Framework:
 - Tailwind css
 
