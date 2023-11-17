@@ -5,6 +5,8 @@ const Navbar = () => {
         <li><Link to={'/'}>HOME</Link></li>
         <li><Link to={'/menu'}>OUR MENU</Link></li>
         <li><Link to={'/order/salad'}>OUR SHOP</Link></li>
+        <li><Link to={'/login'}>Log In</Link></li>
+        <li><Link to={'/signup'}>Sign Up</Link></li>
     </>
 
     const dropDownMenu = <>
