@@ -1,21 +1,38 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contextProviders/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error))
+    }
+
     const navItems = <>
         <li><Link to={'/'}>HOME</Link></li>
         <li><Link to={'/menu'}>OUR MENU</Link></li>
         <li><Link to={'/order/salad'}>OUR SHOP</Link></li>
-        <li><Link to={'/login'}>Log In</Link></li>
-        <li><Link to={'/signup'}>Sign Up</Link></li>
+        {
+            user ?
+                <li><Link onClick={handleLogOut}>Log Out</Link></li>
+                :
+                <>
+                    <li><Link to={'/signup'}>Sign Up</Link></li>
+                    <li><Link to={'/login'}>Log In</Link></li>
+                </>
+        }
     </>
 
-    const dropDownMenu = <>
-        <summary>Parent</summary>
-        <ul className="p-2 bg-black bg-opacity-30 text-white">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-        </ul>
-    </>
+    // const dropDownMenu = <>
+    //     <summary>Parent</summary>
+    //     <ul className="p-2 bg-black bg-opacity-30 text-white">
+    //         <li><a>Submenu 1</a></li>
+    //         <li><a>Submenu 2</a></li>
+    //     </ul>
+    // </>
 
     return (
         <div className="navbar max-w-screen-xl fixed z-10 bg-black bg-opacity-30 text-white">
@@ -26,7 +43,7 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         {navItems}
-                        {dropDownMenu}
+                        {/* {dropDownMenu} */}
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">Bistro Boss</a>
@@ -34,15 +51,27 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {navItems}
-                    <li tabIndex={0}>
+                    {/* <li tabIndex={0}>
                         <details>
                             {dropDownMenu}
                         </details>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                {
+                    user && <>
+                        <div className="avatar online">
+                            <div className="w-8 rounded-full mr-2">
+                                {
+                                    user?.photoURL &&
+                                    <img src={user?.photoURL} alt="" />
+                                }
+                            </div>
+                        </div>
+                        <p className=" px-2">{user?.displayName}</p>
+                    </>
+                }
             </div>
         </div>
     );
