@@ -23,6 +23,8 @@
 - Website Naming: react-helmet-async
 - react tabs
 - signUp form: react hook form
+- data fetching: Axios(hook)
+- data fetching, caching, updating: Tanstack query(hook)
 
 # Authentication/Authorization:
 - Firebase
