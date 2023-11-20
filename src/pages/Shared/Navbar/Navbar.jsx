@@ -21,10 +21,12 @@ const Navbar = () => {
         {
             user ?
                 <>
-                    <div className=" flex items-center gap-2 px-2 bg-black bg-opacity-20 rounded">
-                        <FaCartPlus className=" text-xl text-white" />
-                        <div className="badge badge-secondary">+{cart.length}</div>
-                    </div>
+                    <Link to={'/dashboard/cart'}>
+                        <button className="btn btn-ghost flex items-center gap-2 px-2 bg-black bg-opacity-20 rounded">
+                            <FaCartPlus className=" text-xl text-white" />
+                            <div className="badge badge-secondary">+{cart.length}</div>
+                        </button>
+                    </Link>
                     <li><Link onClick={handleLogOut}>Log Out</Link></li>
                 </>
                 :
@@ -50,7 +52,7 @@ const Navbar = () => {
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-x-2">
                         {navItems}
                         {/* {dropDownMenu} */}
                     </ul>
@@ -58,7 +60,7 @@ const Navbar = () => {
                 <a className="btn btn-ghost text-xl">Bistro Boss</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 space-x-2">
                     {navItems}
                     {/* <li tabIndex={0}>
                         <details>
