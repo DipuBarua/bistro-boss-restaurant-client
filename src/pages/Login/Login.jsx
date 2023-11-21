@@ -1,9 +1,10 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/others/authentication2.png";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../contextProviders/AuthProvider";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
     const { logIn } = useContext(AuthContext);
@@ -90,6 +91,8 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <input disabled={disable} type="submit" value="Log In" className="btn btn-outline hover:bg-orange-600 rounded-none text-xl" />
                             </div>
+
+                            <SocialLogin></SocialLogin>
 
                             {/* <div className=" border border-black p-2 flex justify-center">
                             <button onClick={handleGoogleLogin} className="text-3xl"><FcGoogle></FcGoogle></button>

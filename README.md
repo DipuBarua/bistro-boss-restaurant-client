@@ -1,7 +1,7 @@
 # Project: Bistro Boss Restaurant
 - Live: 
 
-# Featured or Functionality:
+# Featured or Functionality
 - SignUp,SignIn Authentication and User Authorization.
 - Email,Password and Google both signIN system used.
 - Data query using live data server.
@@ -10,14 +10,14 @@
 - Add to card system for each individual user.
 - 
 
-# Css Framework:
+# Css Framework
 - Tailwind css
 
-# Libraries:
+# Libraries
 - daisy UI
 - swiper
  
-# Others Exist Components:
+# Others Existing Components/Libraries
 - Date & Time: moment.js
 - react parallax (blur,scroll)  
 - Website Naming: react-helmet-async
@@ -26,11 +26,11 @@
 - data fetching: Axios(hook)
 - data fetching, caching, updating: Tanstack query(hook)
 
-# Authentication/Authorization:
+# Authentication/Authorization
 - Firebase
 
-# Server:
+# Server
 - Express
 
-# DataBase:
+# DataBase
 - Mongodb

@@ -1,15 +1,17 @@
 import { Link, useNavigate } from "react-router-dom";
 import registerImg from "../../assets/others/authentication2.png";
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import { useContext } from "react";
 import { AuthContext } from "../../contextProviders/AuthProvider";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const SignUp = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm()
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUser } = useContext(AuthContext);
     const navigate = useNavigate();
+    const axiosPublic = useAxiosPublic();
 
     const onSubmit = (data) => {
         console.log(data);
@@ -24,14 +26,24 @@ const SignUp = () => {
                         console.log("user profile updated.", res);
                         reset();
 
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "Your profile successfully created",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        navigate("/");
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email
+                        }
+                        axiosPublic.post("/users", userInfo)
+                            .then(res => {
+                                console.log(res.data);
+                                if (res.data.insertedId) {
+                                    Swal.fire({
+                                        position: "top-end",
+                                        icon: "success",
+                                        title: "Your profile successfully created",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate("/");
+                                }
+                            })
                     })
                     .catch(err => console.log(err))
             })
