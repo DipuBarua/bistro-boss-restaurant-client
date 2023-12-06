@@ -17,14 +17,15 @@
 - daisy UI
 - swiper
  
-# Others Existing Components/Libraries
+# Others Existing Node Package
 - Date & Time: moment.js
-- react parallax (blur,scroll)  
+- swiper: react parallax (blur,scroll)  
 - Website Naming: react-helmet-async
 - react tabs
 - signUp form: react hook form
 - data fetching: Axios(hook)
 - data fetching, caching, updating: Tanstack query(hook)
+- payment gateway: Stripe
 
 # Authentication/Authorization
 - Firebase

@@ -2,6 +2,8 @@ import { FaTrash } from "react-icons/fa";
 import useCart from "../../../hooks/useCart";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Cart = () => {
     const axiosSecure = useAxiosSecure();
@@ -39,10 +41,23 @@ const Cart = () => {
 
     return (
         <>
-            <div className=" flex justify-evenly mb-5 pt-5 bg-orange-500 mx-10">
+            <Helmet>
+                <title>Bristo | Dashboard | MyCart</title>
+            </Helmet>
+
+            <div className=" flex justify-evenly mb-5 pt-5 pb-3 bg-orange-500 mx-10">
                 <h2 className=" text-3xl font-bold">Total Orders: {cart.length}</h2>
                 <h2 className=" text-3xl font-bold">Total Price: ${totalPrice}</h2>
-                <button className="btn btn-primary">Pay</button>
+                {
+                    cart.length ?
+                        <Link to={'/dashboard/payment'}>
+                            <button className="btn btn-primary">Pay</button>
+                        </Link>
+                        :
+                        <Link>
+                            <button disabled className="btn btn-primary">Pay</button>
+                        </Link>
+                }
             </div>
 
             <div className="overflow-x-auto pl-8 pt-5">
