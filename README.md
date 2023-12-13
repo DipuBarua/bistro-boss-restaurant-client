@@ -1,5 +1,5 @@
 # Project: Bistro Boss Restaurant
-- Live: 
+- Live: https://bistro-boss-restaurant-4ea5b.web.app/
 
 # Featured or Functionality
 - SignUp,SignIn Authentication and User Authorization.
@@ -17,7 +17,7 @@
 - daisy UI
 - swiper
  
-# Others Existing Node Package
+# Others Existing Node Packages
 - Date & Time: moment.js
 - swiper: react parallax (blur,scroll)  
 - Website Naming: react-helmet-async
