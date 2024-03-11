@@ -26,12 +26,14 @@
 - data fetching: Axios(hook)
 - data fetching, caching, updating: Tanstack query(hook)
 - payment gateway: Stripe
+- mailgun: npm install mailgun.js
 
 # Authentication/Authorization
 - Firebase
+- jwt
 
 # Server
-- Express
+- Express(node.js)
 
 # DataBase
 - Mongodb
