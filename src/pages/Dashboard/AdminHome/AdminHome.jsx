@@ -7,6 +7,7 @@ import moment from "moment";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
 // pie chart 
 import { PieChart, Pie } from 'recharts';
+import { Helmet } from "react-helmet-async";
 
 
 const AdminHome = () => {
@@ -67,6 +68,10 @@ const AdminHome = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Bristo | Dashboard | Admin | Home</title>
+            </Helmet>
+
             <div className=" flex justify-evenly mb-5 pt-5 bg-orange-500 mx-10">
                 <h2 className=" text-3xl font-bold">Hi Welcome! {user?.displayName ? user.displayName : "Dear User"}</h2>
             </div>

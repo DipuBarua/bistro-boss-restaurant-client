@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { FaTrash, FaUser } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AllUsers = () => {
     // used tenstack query and axios for data fetching
@@ -63,6 +64,10 @@ const AllUsers = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Bristo | Dashboard | Admin | AllUsers</title>
+            </Helmet>
+
             <div className=" flex justify-evenly mb-5 pt-5 bg-orange-500 mx-10">
                 <h2 className=" text-3xl font-bold">All Users</h2>
                 <h2 className=" text-3xl font-bold">Total Users:{users.length} </h2>

@@ -9,7 +9,7 @@ const Dashboard = () => {
     const [isAdmin] = useAdmin();
 
     return (
-        <div className=" flex">
+        <div className=" md:flex">
             {/* Dashboard Slidebar  */}
             <div className=" w-64 min-h-screen bg-orange-500">
                 <li className=" menu-title"> <p className=" text-2xl">BISTRO BOSS</p> Restaurant</li>
@@ -57,7 +57,7 @@ const Dashboard = () => {
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={'/dashboard/payment'}>
+                                    <NavLink to={'/dashboard/reservation'}>
                                         <FaCalendar className=""></FaCalendar>
                                         Reservation
                                     </NavLink>

@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const ManageItems = () => {
     const [menu, refetch] = useMenu();
@@ -39,6 +40,10 @@ const ManageItems = () => {
 
     return (
         <div className="overflow-x-auto">
+            <Helmet>
+                <title>Bristo | Dashboard | Admin | ManageItems</title>
+            </Helmet>
+
             <SectionTitle
                 subHeading={"---Hurry Up!---"}
                 heading={"MANAGE ALL ITEMS"}>

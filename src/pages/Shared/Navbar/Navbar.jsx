@@ -20,23 +20,6 @@ const Navbar = () => {
         <li><Link to={'/'}>HOME</Link></li>
         <li><Link to={'/menu'}>OUR MENU</Link></li>
         <li><Link to={'/order/salad'}>OUR SHOP</Link></li>
-        {
-            user ?
-                <>
-                    <Link to={'/dashboard/cart'}>
-                        <button className="btn btn-ghost flex items-center gap-2 px-2 bg-black bg-opacity-20 rounded">
-                            <FaCartPlus className=" text-xl text-white" />
-                            <div className="badge badge-secondary">+{cart.length}</div>
-                        </button>
-                    </Link>
-                    <li><Link onClick={handleLogOut}>Log Out</Link></li>
-                </>
-                :
-                <>
-                    <li><Link to={'/signup'}>Sign Up</Link></li>
-                    <li><Link to={'/login'}>Log In</Link></li>
-                </>
-        }
 
         {
             user && isAdmin &&
@@ -46,10 +29,34 @@ const Navbar = () => {
         }
         {
             user && !isAdmin &&
-            <li>
-                <Link to={"/dashboard/userHome"}>Dashboard</Link>
-            </li>
+            <>
+                <li>
+                    <Link to={"/dashboard/userHome"}>Dashboard</Link>
+                </li>
+                <li>
+                    <Link to={'/dashboard/cart'}>
+                        <button className="btn btn-ghost flex items-center gap-2 px-2 bg-black bg-opacity-20 rounded">
+                            <FaCartPlus className=" text-xl text-white" />
+                            <div className="badge badge-secondary">+{cart.length}</div>
+                        </button>
+                    </Link>
+                </li>
+            </>
+
         }
+
+        {
+            user ?
+                <>
+                    <li><Link onClick={handleLogOut}>Log Out</Link></li>
+                </>
+                :
+                <>
+                    <li><Link to={'/signup'}>Sign Up</Link></li>
+                    <li><Link to={'/login'}>Log In</Link></li>
+                </>
+        }
+
     </>
 
     // const dropDownMenu = <>
