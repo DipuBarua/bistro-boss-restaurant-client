@@ -15,6 +15,8 @@ const ManageBookings = () => {
             return result.data;
         }
     })
+    console.log("total", bookings.totalBookings);
+    console.log("result", bookings.allBookings);
 
     const handleActionBtn = async (id) => {
         const updateBooking = await axiosSecure.patch(`/booking/${id}`);
@@ -44,7 +46,7 @@ const ManageBookings = () => {
             </SectionTitle>
 
             <div className=" flex justify-evenly mb-5 pt-5 pb-3 bg-orange-500 mx-10">
-                <h2 className=" text-3xl font-bold">Total Bookings: {""}</h2>
+                <h2 className=" text-3xl font-bold">Total Bookings: {bookings.totalBookings}</h2>
             </div>
 
             <div className="overflow-x-auto pl-8 pt-5 bg-slate-200 mx-10 mb-10">
@@ -70,7 +72,8 @@ const ManageBookings = () => {
 
                         {/* single row  */}
                         {
-                            bookings.map((booking, index) => <tr key={booking._id}>
+                            (bookings.allBookings)?.map((booking, index) => <tr key={booking._id}>
+                                {/* optional chaining ? is most important for mapping to aviod null or undefined */}
                                 <th>
                                     <label>
                                         {index + 1}

@@ -21,11 +21,13 @@ import AddReview from "../pages/Dashboard/AddReview/AddReview";
 import Reservation from "../pages/Dashboard/Reservation/Reservation";
 import MyBooking from "../pages/Dashboard/MyBooking/MyBooking";
 import ManageBookings from "../pages/Dashboard/ManageBookings/ManageBookings";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -52,6 +54,7 @@ const router = createBrowserRouter([
     {
         path: "dashboard",
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             // normal user's routes 
             {

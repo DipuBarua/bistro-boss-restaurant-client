@@ -67,7 +67,7 @@ const UserHome = () => {
                     <h3 className=" font-bold text-2xl pb-2 text-center">My Activities</h3>
                     <p className=" font-semibold"><span className=" pr-3">ORDERS :</span>{statistics.totalOrder}</p>
                     <p className=" font-semibold"><span className=" pr-3">RIVIEWS :</span>{statistics.totalReviews}</p>
-                    <p className=" font-semibold"><span className=" pr-3">BOOKINGS :</span></p>
+                    <p className=" font-semibold"><span className=" pr-3">BOOKINGS :</span>{statistics.totalbookings}</p>
                     <p className=" font-semibold"><span className=" pr-3">PAYMENTS :</span>{statistics.totalShop}</p>
                 </div>
             </div>

@@ -60,7 +60,7 @@ const MyBooking = () => {
             </SectionTitle>
 
             <div className=" flex justify-evenly mb-5 pt-5 pb-3 bg-orange-500 mx-10">
-                <h2 className=" text-3xl font-bold">Total Bookings: {''}</h2>
+                <h2 className=" text-3xl font-bold">Total Bookings: {bookings.total}</h2>
                 {
                     'cart'.length ?
                         <Link to={''}>
@@ -94,7 +94,7 @@ const MyBooking = () => {
 
                         {/* single row  */}
                         {
-                            bookings.map((booking, index) => <tr key={booking._id}>
+                            bookings.myBookings?.map((booking, index) => <tr key={booking._id}>
                                 <th>
                                     <label>
                                         {index + 1}
